@@ -55,8 +55,8 @@ ynh_restore_file --origin_path="$gitdir" --not_mandatory
 mkdir -p $gitdir
 
 chmod 755 "$gitdir"
-#chmod -R o-rwx "$gitdir"
-chown -R $app:www-data "$gitdir"
+chmod -R o-rwx "$gitdir"
+chown -R root:root "$gitdir"
 
 #=================================================
 # SPECIFIC RESTORATION
