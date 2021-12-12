@@ -50,6 +50,18 @@ ynh_script_progression --message="Installing dependencies..." --weight=7
 ynh_install_app_dependencies $pkg_dependencies
 
 #=================================================
+# CREATE DEDICATED USER
+#=================================================
+ynh_script_progression --message="Configuring system user..." --weight=1
+
+# Create a system user
+ynh_system_user_create --username=$app --home_dir="/usr/share/gitweb"
+
+chmod 750 "/usr/share/gitweb"
+chmod -R o-rwx "/usr/share/gitweb"
+chown -R $app:www-data "/usr/share/gitweb"
+
+#=================================================
 # NGINX CONFIGURATION
 #=================================================
 ynh_script_progression --message="Configuring NGINX web server..." --weight=2
@@ -68,8 +80,8 @@ ynh_app_setting_set --app=$app --key=gitdir --value=$gitdir
 mkdir -p $gitdir
 
 chmod 755 "$gitdir"
-chmod -R o-rwx "$gitdir"
-chown -R root:root "$gitdir"
+#chmod -R o-rwx "$gitdir"
+chown -R $app:www-data "$gitdir"
 
 #=================================================
 # ADD A CONFIGURATION
@@ -78,7 +90,7 @@ ynh_script_progression --message="Adding a configuration file..." --weight=1
 
 ynh_add_config --template="../conf/gitweb.conf" --destination="/etc/gitweb.conf"
 
-chown root:root "/etc/gitweb.conf"
+chown $app:$app "/etc/gitweb.conf"
 
 #=================================================
 # SETUP SSOWAT
