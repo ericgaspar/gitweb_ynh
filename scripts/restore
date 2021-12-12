@@ -56,7 +56,7 @@ mkdir -p $gitdir
 
 chmod 755 "$gitdir"
 chmod -R o-rwx "$gitdir"
-chown -R root:root "$gitdir"
+chown -R root:www-data "$gitdir"
 
 #=================================================
 # SPECIFIC RESTORATION
