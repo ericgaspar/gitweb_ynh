@@ -1,9 +1,14 @@
-Some long and extensive description of what the app is and does, lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Git web interface (web frontend to Git repositories)
 
 ### Features
 
-- Ut enim ad minim veniam, quis nostrud exercitation ullamco ;
-- Laboris nisi ut aliquip ex ea commodo consequat ;
-- Duis aute irure dolor in reprehenderit in voluptate ;
-- Velit esse cillum dolore eu fugiat nulla pariatur ;
-- Excepteur sint occaecat cupidatat non proident, sunt in culpa."
+- Viewing multiple Git repositories with common root.
+- Browsing every revision of the repository.
+- Viewing the contents of files in the repository at any revision.
+- Viewing the revision log of branches, history of files and directories, see what was changed when, by who.
+- Viewing the blame/annotation details of any file (if enabled).
+- Generating RSS and Atom feeds of commits, for any branch. The feeds are auto-discoverable in modern web browsers.
+- Viewing everything that was changed in a revision, and step through revisions one at a time, viewing the history of the repository.
+- Finding commits which commit messages matches given search term.
+
+
