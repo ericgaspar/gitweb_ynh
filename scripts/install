@@ -76,7 +76,7 @@ chown -R root:root "$gitdir"
 #=================================================
 ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-ynh_add_config --template="some_config_file" --destination="/etc/gitweb.conf"
+ynh_add_config --template="../conf/gitweb.conf" --destination="/etc/gitweb.conf"
 
 chown root:root "/etc/gitweb.conf"
 
